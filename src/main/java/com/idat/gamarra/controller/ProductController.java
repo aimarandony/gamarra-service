@@ -43,6 +43,7 @@ public class ProductController {
     @DeleteMapping("{id}")
     public ResponseEntity<Object> delete(@PathVariable Long id) {
         Map<String, Object> data = new HashMap<>();
+        service.deleteById(id);
         data.put("message", "Product deleted successfully");
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
